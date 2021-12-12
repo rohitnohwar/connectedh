@@ -80,7 +80,7 @@ function SelectionTable(props){
                             </td>
                         ))}
 
-                        <td className="td-1"><input type="number" min="0" onChange={handleChange} value={props.selectedProducts[item.name]==undefined?0:props.selectedProducts[item.name]} onClick={(e)=>{console.log(e.target.value);}} name={item.name} className="quantity-input" placeholder="0"></input> </td>
+                        <td className="td-1"><input type="number" min="0" onChange={handleChange} value={props.selectedProducts[item.name]===undefined?"":props.selectedProducts[item.name]} onClick={(e)=>{console.log(e.target.value);}} name={item.name} className="quantity-input" placeholder="0"></input> </td>
 
                         </tr>);
                 })}
