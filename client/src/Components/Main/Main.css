@@ -1,0 +1,32 @@
+.logout-button-div {
+    text-align: center;
+}
+
+.logout-button {
+    width: 200px;
+    margin-top: 15px;
+    height: 35px;
+    border: 0px;
+    background-color: #ffb600;
+    border-radius: 5px;
+}
+
+.line {
+    border: 0px solid black;
+    height: 0px;
+    border-top: 2px solid black;
+    margin-top: 40px;
+}
+
+.selected-products-section {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.your-products {
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,26 @@
+.user-info-box {
+    background-color: aquamarine;
+    width: 30rem;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    height: 200px;
+    border-radius: 1rem;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.logout-button {
+    
+}
+
+.user-info-label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 520px) {
+    .user-info-box {
+        width: 18rem;
+    }
+}

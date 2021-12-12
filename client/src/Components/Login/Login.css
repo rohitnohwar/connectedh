@@ -1,0 +1,57 @@
+.register-form{
+    text-align: center;
+    background-color: aquamarine;
+    width: 30rem;
+    margin: auto;
+    margin-top: 15rem;
+    padding: 1rem;
+    height: 300px;
+    border-radius: 1rem;
+}
+
+.message {
+    color: red;
+}
+
+.reg-input{
+    border-radius: 1rem;
+    width: 20rem;
+    margin:0.7rem;
+    padding: 0.7rem;
+}
+
+.reg-button{
+    width:8rem;
+    margin:1rem;
+    border-radius: 1rem;
+    padding: 0.4rem;
+}
+
+input{
+    outline: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-height: 700px) {
+    .register-form {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (max-height: 550px) {
+    .register-form {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .register-form {
+        width: 18rem;
+    }
+    .reg-input {
+        width: 12rem;
+    }
+}

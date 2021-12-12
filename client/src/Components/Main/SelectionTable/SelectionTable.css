@@ -1,0 +1,31 @@
+.select-products {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.table-1 {
+    margin: auto;
+    width: 70%;
+}
+
+.td-1, .th-1 {
+    width: 25%;
+    text-align: center;
+}
+
+.table-1, .th-1, .td-1{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.table-img {
+    width: 100px;
+    height: 150px;
+}
+
+.quantity-input {
+    width: 50px;
+}
