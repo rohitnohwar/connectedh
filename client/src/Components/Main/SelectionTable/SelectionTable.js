@@ -32,7 +32,7 @@ function SelectionTable(props){
     useEffect(()=>{
         let boolean=false
         let temp={}
-        Object.keys(props.selectedProducts).map((key, index)=>{
+        props.selectedProducts && Object.keys(props.selectedProducts).map((key, index)=>{
             if(props.selectedProducts[key]>0){
                 temp[key]=props.selectedProducts[key]
             }
@@ -40,8 +40,16 @@ function SelectionTable(props){
                 boolean=true
             }
         })
-        console.log(temp)
-        localStorage.setItem("selectedProducts", JSON.stringify(temp))
+        
+
+        if(props.selectedProducts){
+            let temp1=localStorage.getItem("selectedProducts")?JSON.parse(localStorage.getItem("selectedProducts")):{}
+            if(props.username){
+                temp1[props.username]=temp
+            }
+            localStorage.setItem("selectedProducts", JSON.stringify(temp1))
+        }
+
         if(boolean===true){
             props.setSelectedProducts(temp)
         }
@@ -80,7 +88,7 @@ function SelectionTable(props){
                             </td>
                         ))}
 
-                        <td className="td-1"><input type="number" min="0" onChange={handleChange} value={props.selectedProducts[item.name]===undefined?"":props.selectedProducts[item.name]} name={item.name} className="quantity-input" placeholder="0"></input> </td>
+                        <td className="td-1"><input type="number" min="0" onChange={handleChange} value={(props.selectedProducts && props.selectedProducts[item.name])?props.selectedProducts[item.name]:""} name={item.name} className="quantity-input" placeholder="0"></input> </td>
 
                         </tr>);
                 })}

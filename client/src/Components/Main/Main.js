@@ -6,16 +6,23 @@ import SelectionTable from "./SelectionTable/SelectionTable";
 import "./Main.css"
 
 function Main(){
+    const [username,setUsername]=useState(JSON.parse(localStorage.getItem('profile'))?.username)
     const [auth, setAuth] = useState(localStorage.getItem('profile'))
     const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('profile')))
     const [products, setProducts] = useState([])
-    const [selectedProducts, setSelectedProducts] = useState(localStorage.getItem('selectedProducts')?JSON.parse(localStorage.getItem('selectedProducts')):{})
+    const [selectedProducts, setSelectedProducts] = useState()
 
     async function getProducts(){
         await axios.get("/getproducts").then((response)=>{
             setProducts(response.data.foundProducts)
         })
     }
+
+    useEffect(()=>{
+        if(username!==undefined && username!==undefined && localStorage.getItem('selectedProducts')){
+            setSelectedProducts(JSON.parse(localStorage.getItem('selectedProducts'))[username])
+        }
+    },[username])
 
     useEffect(()=>{
         getProducts()
@@ -35,13 +42,13 @@ function Main(){
                 <div className="logout-button-div"><button className="logout-button" onClick={logout}>Logout</button></div>
                 <hr className="line"></hr>
 
-                <SelectionTable products={products} selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts}/>
+                <SelectionTable products={products} selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts} username={username}/>
                 <hr className="line"></hr>
 
                 <div className="selected-products-section">
                     <div className="your-products">Products selected by you:-</div>
 
-                    {Object.keys(selectedProducts).map((item, index)=>{
+                    {selectedProducts && Object.keys(selectedProducts).map((item, index)=>{
                         return (
                             <div>{index+1}. {item}. Quantity:- {selectedProducts[item]}</div>);
                     })}
