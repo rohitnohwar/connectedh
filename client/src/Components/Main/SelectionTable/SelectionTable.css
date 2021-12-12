@@ -36,3 +36,21 @@
         width: 95%;
     }
 }
+
+@media screen and (max-width: 390px){
+    .MuiToolbar-gutters {
+        padding-left: 0px !important;
+    }
+
+    .MuiTablePagination-select  {
+        padding-left: 0px !important;
+    }
+
+    .MuiTablePagination-selectRoot {
+        margin-left: 0px !important;
+    }
+
+    .MuiTablePagination-actions {
+        margin-left: 0px !important;
+    }
+}
