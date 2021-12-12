@@ -14,7 +14,7 @@ function SelectionTable(props){
         props.setSelectedProducts(prevValue=>{
             return {
                     ...prevValue,
-                    [name]:+value
+                    [name]:+value%1===0?+value:Math.floor(+value/1)
             }
         })
 
