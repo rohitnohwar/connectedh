@@ -29,3 +29,10 @@
 .quantity-input {
     width: 50px;
 }
+
+@media screen and (max-width: 750px){
+    .table-1 {
+        margin: auto;
+        width: 95%;
+    }
+}
