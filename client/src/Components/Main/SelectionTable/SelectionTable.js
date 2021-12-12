@@ -5,7 +5,7 @@ import "./SelectionTable.css"
 function SelectionTable(props){
     const [page, setPage] = useState(0)
     const [rowsPerPage, setRowsPerPage] = useState(2)
-    const [tableHeaders, setTableHeaders] = useState(["imgUrl", "name", "price", "choose quantity"]) 
+    const [tableHeaders, setTableHeaders] = useState(["image", "name", "price", "choose quantity"]) 
 
 
     async function handleChange(event){
